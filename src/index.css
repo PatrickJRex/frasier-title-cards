@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -86,17 +87,29 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: 80vw;
+  width: 90vw;
   height: calc(100% - 40px);
   padding: 2em;
   color: #fff;
   font-family: 'itc_korinnaregular', serif;
   font-weight: 100;
-  font-size: clamp(3vw, 1.5rem, 5vw);
+  font-size: clamp(5vw, 1.5rem, 5vw);
   text-transform: uppercase;
   line-height: 1.25;
   overflow: hidden;
-  transition: 200ms all ease;
+  line-break: normal;
+  text-align: center;
+
+  @media (min-width: 992px) {
+    width: 80vw;
+    font-size: clamp(3vw, 1.5rem, 5vw);
+
+  }
+}
+
+.contentTarget.loading {
+  opacity: 0;
+
 }
 
 .app-header {
@@ -149,7 +162,7 @@ button:focus-visible {
   position: absolute;
   bottom:0;
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
   width: 100%;
   left: 0;
   font-size: 12px;
