@@ -5,3 +5,6 @@ Well, he'd probably be visiting this site to make funny little JPEGS to share ar
 I AM WOUNDED! 
 Yeah, probably, but I'm having fun, you should too. 
 
+## View this magical beast in the wild
+https://frasier-title-cards.netlify.app/
+

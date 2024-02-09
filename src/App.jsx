@@ -1,13 +1,22 @@
 
+import { useEffect, useState } from 'react';
 import './App.css'
 import TitleCard from './components/TitleCard'
+import TitleCardTitle  from './components/TitleCardTitle'
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
 function App() {
-
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsLoading(false);
+    }, 3000);
+  })
   return (
     <>
-      <div>
+      {!isLoading ? (
+        <div>
+          <main className='fade-in-fwd'>
         <header className='app-header'>
           <a href="/"><h1 className='app-title'>Frasier Title Card Generator</h1></a>
           <nav className="socials">
@@ -20,7 +29,16 @@ function App() {
           </nav>
         </header>
         <TitleCard/>
+        </main>
+        <footer className='site-footer'>
+          &copy; {new Date().getFullYear()} | Patrick Rex
+        </footer>
        </div>
+      ) : (
+        <>
+        <TitleCardTitle className="title-card-title" width="80vw" height="80vh" />
+        </>
+      )}
     </>
   )
 }
