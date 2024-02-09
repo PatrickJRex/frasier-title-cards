@@ -14,7 +14,7 @@ function TitleCard() {
 
     const setImage = () => {
       console.log(document.querySelector('#titleCardImage').textContent);
-      htmlToImage.toJpeg(document.getElementById('titleCardImage'), { quality: 0.95, width: 1000, height:1000 })
+      htmlToImage.toJpeg(document.getElementById('titleCardImage'), { quality: 0.95, width: 960, height:540, pixelRatio: 2 })
       .then(function (dataUrl) {
         const punctuationRegex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
         const spaceRegex = /\s+/g;
@@ -36,7 +36,7 @@ function TitleCard() {
 
   return (
     <div>
-        <div id='titleCardImage' className='contentTarget' contentEditable="true">
+        <div id='titleCardImage' className='contentTarget' contentEditable="true" suppressContentEditableWarning={true}>
             {titleCard}
         </div>
         <button onClick={setImage}>
