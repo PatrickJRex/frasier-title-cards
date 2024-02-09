@@ -39,14 +39,21 @@ function TitleCard() {
         <div id='titleCardImage' className='contentTarget' contentEditable="true">
             {titleCard}
         </div>
-        <button onClick={setImage}>
+       
+     <div className="button-grouping">
+     <button onClick={setImage}>
           <FaDownload />
           Save Image
           </button>
         <button onClick={resetText}>
           <FaRepeat/>
-          Reset
+          Random Quote
           </button>
+     </div>
+
+          <div className="title-card-helper-text">
+          Tap or click on the text to make your own Fraiser title card.
+        </div>
     </div>
   )
 }

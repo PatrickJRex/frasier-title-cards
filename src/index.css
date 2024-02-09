@@ -96,6 +96,7 @@ button:focus-visible {
   text-transform: uppercase;
   line-height: 1.25;
   overflow: hidden;
+  transition: 200ms all ease;
 }
 
 .app-header {
@@ -155,6 +156,15 @@ button:focus-visible {
   font-family:'itc_korinna_ltregular', serif;
   text-transform: uppercase;
 }
+
+.title-card-helper-text {
+  font-family:'itc_korinna_ltregular', serif;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  color: #f9f9f9;
+  margin-top: 1.75rem;
+  display: block;
+  text-align: center;
+} 
 
 .fade-in-fwd {
 	-webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
