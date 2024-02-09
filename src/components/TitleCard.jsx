@@ -6,6 +6,7 @@ import { FaRepeat, FaDownload } from "react-icons/fa6";
 
 function TitleCard() {
     const [titleCard, setTitleCard] = useState(null);
+    const [cardLoading, setCardLoading] = useState(false);
     useEffect(()=>{
       const quote = quotes[Math.floor(quotes.length * Math.random())]
       setTitleCard(quote);
@@ -14,7 +15,7 @@ function TitleCard() {
 
     const setImage = () => {
       console.log(document.querySelector('#titleCardImage').textContent);
-      htmlToImage.toJpeg(document.getElementById('titleCardImage'), { quality: 0.95, width: 1000, height:1000 })
+      htmlToImage.toJpeg(document.getElementById('titleCardImage'), { quality: 0.95, width: 960, height:540, pixelRatio: 2 })
       .then(function (dataUrl) {
         const punctuationRegex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
         const spaceRegex = /\s+/g;
@@ -29,24 +30,37 @@ function TitleCard() {
       });
     }
 
-    const resetText = () => {
+    const resetText = (e) => {
+      e.target.setAttribute('disabled', true);
+     setTimeout(()=>{
+      setCardLoading(true);
       const quote = quotes[Math.floor(quotes.length * Math.random())]
       setTitleCard(quote);
+      setCardLoading(false);
+      e.target.removeAttribute('disabled');
+     }, 500);
     }
 
   return (
     <div>
-        <div id='titleCardImage' className='contentTarget' contentEditable="true">
+        <div id='titleCardImage' className={`contentTarget ${cardLoading ? 'loading':''}`} contentEditable="true">
             {titleCard}
         </div>
-        <button onClick={setImage}>
+       
+     <div className="button-grouping">
+     <button onClick={setImage}>
           <FaDownload />
           Save Image
           </button>
         <button onClick={resetText}>
           <FaRepeat/>
-          Reset
+          Random Quote
           </button>
+     </div>
+
+          <div className="title-card-helper-text">
+          Tap or click on the text to make your own Fraiser title card.
+        </div>
     </div>
   )
 }

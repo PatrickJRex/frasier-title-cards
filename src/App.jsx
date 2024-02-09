@@ -18,7 +18,7 @@ function App() {
         <div>
           <main className='fade-in-fwd'>
         <header className='app-header'>
-          <a href="/"><h1 className='app-title'>Frasier Title Card Generator</h1></a>
+          <a href="/"><h1 className='app-title'><span>F</span>rasier <span>T</span>itle <span>C</span>ard <span>G</span>enerator</h1></a>
           <nav className="socials">
             <a href="https://www.linkedin.com/in/patrickjrex/" rel='noopener noreferrer' target='_blank'>
             <FaLinkedin />
