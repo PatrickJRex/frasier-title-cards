@@ -25,7 +25,7 @@ const TitleCardTitle = (props) => (
     <path />
     <text
       fill="url(#Gradient1)"
-      fontFamily='ITCKorinnaNormal,"ITC_ Korinna"'
+      fontFamily='"ITCKorinnaNormal","ITC_ Korinna"'
       fontSize={56}
       transform="translate(0 635.64)"
     >
