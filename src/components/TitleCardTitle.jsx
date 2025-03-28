@@ -25,11 +25,11 @@ const TitleCardTitle = (props) => (
     <path />
     <text
       fill="url(#Gradient1)"
-      fontFamily='"ITCKorinnaNormal","ITC_ Korinna"'
+      fontFamily='"ITCKorinnaNormal","ITC_ Korinna", serif'
       fontSize={56}
       transform="translate(0 635.64)"
     >
-      <tspan x={0} y={0}>
+      <tspan x={0} y={0} className="titleCardTitle__text">
         {"TITLE CARD GENERATOR"}
       </tspan>
     </text>

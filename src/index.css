@@ -105,6 +105,10 @@ button:focus-visible {
   }
 }
 
+.titleCardTitle__text {
+  font-family: 'itc_korinnaregular', serif;
+}
+
 .contentTarget.loading {
   opacity: 0;
 
